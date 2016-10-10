@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.hnust.dao.IDepartDao" >
+  <resultMap id="BaseResultMap" type="com.cn.hnust.pojo.Depart" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="CHAR" />
+    <result column="describe" property="describe" jdbcType="VARCHAR" />
+    <result column="node" property="node" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, code, `describe`, node
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Character" >
+    select
+    <include refid="Base_Column_List" />
+    from depart_t
+    where id = #{id,jdbcType=CHAR}
+  </select>
+
+  <select id="loadAllData" resultMap="BaseResultMap">
+    select id,name,code,`describe`,node from depart_t
+  </select>
+
+  <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Character" >-->
+    <!--delete from depart_t-->
+    <!--where id = #{id,jdbcType=CHAR}-->
+  <!--</delete>-->
+  <!--<insert id="insert" parameterType="com.cn.hnust.pojo.Depart" >-->
+    <!--insert into depart_t (id, user_name, password,-->
+    <!--age)-->
+    <!--values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=CHAR},-->
+    <!--#{describe,jdbcType=VARCHAR}), #{node,jdbcType=VARCHAR})-->
+  <!--</insert>-->
+  <!--<insert id="insertSelective" parameterType="com.cn.hnust.pojo.Depart" >-->
+    <!--insert into user_t-->
+    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
+      <!--<if test="id != null" >-->
+        <!--id,-->
+      <!--</if>-->
+      <!--<if test="name != null" >-->
+        <!--name,-->
+      <!--</if>-->
+      <!--<if test="code != null" >-->
+        <!--code,-->
+      <!--</if>-->
+      <!--<if test="describe != null" >-->
+        <!--describe,-->
+      <!--</if>-->
+      <!--<if test="node != null">-->
+        <!--node-->
+      <!--</if>-->
+    <!--</trim>-->
+    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
+      <!--<if test="id != null" >-->
+        <!--#{id,jdbcType=CHAR},-->
+      <!--</if>-->
+      <!--<if test="name != null" >-->
+        <!--#{name,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="code != null" >-->
+        <!--#{code,jdbcType=CHAR},-->
+      <!--</if>-->
+      <!--<if test="describe != null" >-->
+        <!--#{describe,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="node != null" >-->
+        <!--#{node,jdbcType=VARCHAR},-->
+      <!--</if>-->
+    <!--</trim>-->
+  <!--</insert>-->
+  <!--<update id="updateByPrimaryKeySelective" parameterType="com.cn.hnust.pojo.Depart" >-->
+    <!--update depart_t-->
+    <!--<set >-->
+      <!--<if test="name != null" >-->
+        <!--name = #{name,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="describe != null" >-->
+        <!--describe = #{describe,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="node != null" >-->
+        <!--node = #{node,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="code != null" >-->
+        <!--code = #{code,jdbcType=CHAR},-->
+      <!--</if>-->
+    <!--</set>-->
+    <!--where id = #{id,jdbcType=CHAR}-->
+  <!--</update>-->
+  <!--<update id="updateByPrimaryKey" parameterType="com.cn.hnust.pojo.Depart" >-->
+    <!--update depart_t-->
+    <!--set name = #{name,jdbcType=VARCHAR},-->
+    <!--describe = #{describe,jdbcType=VARCHAR},-->
+    <!--node = #{node,jdbcType=INTEGER}-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</update>-->
+</mapper>

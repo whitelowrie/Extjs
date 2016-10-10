@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+#app-header{
+    background-color: #2276b4;
+    border-bottom: 1px solid #121b28;
+}
+
+#app-header-log{
+    width: 40px;
+    height:25px;
+    background: url(images/logo2.png) no-repeat;
+}
+
+#app-header-title{
+    padding: 15px 0 10px 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
